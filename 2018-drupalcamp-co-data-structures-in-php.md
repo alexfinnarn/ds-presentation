@@ -39,6 +39,11 @@ $foop = g();
     $g = 'g';
   }
 //}
+
+// foreach (array($arr) as $item) {
+foreach ((array) $arr as $item) {
+
+}
 ```
 
 Contrast to JS - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
