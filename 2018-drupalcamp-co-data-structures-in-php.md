@@ -23,6 +23,10 @@ Go over strict vs. dynamic languages and imutability.
 Converting to an array - http://php.net/manual/en/language.types.array.php#language.types.array.casting
 - G
 
+Introduce PHP Storm plugin - https://github.com/kalessil/phpinspectionsea
+- weak types control and possible code construct simplifications
+- can read https://github.com/kalessil/phpinspectionsea/search?q=type&unscoped_q=type to learn more
+
 Example:
 ```php
 $foop = g();
