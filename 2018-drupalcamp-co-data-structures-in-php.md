@@ -1,3 +1,6 @@
+DS GitHub - https://github.com/php-ds/extension 
+
+
 Go over primitive/scalar types
 https://stackoverflow.com/questions/6623130/scalar-vs-primitive-data-type-are-they-the-same-thing/6628566
 
@@ -5,23 +8,44 @@ Scalars are typically contrasted with compounds, such as arrays, maps, sets, str
 
 Primitive types, however, are contrasted with e.g. reference types, and are used when the relevant distinction is "Is this directly a value, or is it a reference to something that contains the real value?", as in Java's primitive types vs. references. I see this as a somewhat lower-level distinction than scalar/compound, but not quite.
 
-PHP Types Doc
-http://php.net/manual/en/language.types.intro.php
-
-List the types…
+List the PHP types - http://php.net/manual/en/language.types.intro.php
+- T
 
 How to cast variables to ensure the type - http://php.net/manual/en/language.types.type-juggling.php#language.types.typecasting
 
+Go over strict vs. dynamic languages and imutability.
+- G
 
 Converting to an array - http://php.net/manual/en/language.types.array.php#language.types.array.casting
+- G
 
 Example:
 ```php
-    $foop = g();
-//  $foop = (array) g();
-//  $foop = array(g());
+$foop = g();
+//$foop = (array) g();
+//$foop = array(g());
 
+if (is_array($foop)) {
+if (gettype($foop) === 'array') {
   foreach ($foop as $f) {
     $g = 'g';
   }
+}
 ```
+
+Contrast to JS - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+- Six primitive types and the object
+- New Symbol type - A Symbol is a unique and immutable primitive value and may be used as the key of an Object property (see below). In some programming languages, Symbols are called atoms.
+- has standard objects - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+- Keyed collections - Map and Set
+
+PHP Array - http://php.net/manual/en/language.types.array.php 
+- An array in PHP is actually an ordered map.
+- This type is optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, **and probably more**.
+
+PHP difference - Pseudo data types http://php.net/manual/en/language.pseudo-types.php
+
+New stuff in PHP 7...
+- Used for documentation to improve readability.
+- @return array|boolean vs. @return mixed
+
