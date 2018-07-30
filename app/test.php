@@ -1,16 +1,3 @@
-<?php
-//declare(strict_types=1);
-
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-//ini_set('display_errors', 1);
-//ini_set('display_errors', 'TRUE');
-//ini_set('display_errors', '1');
-//ini_set('display_errors', 'hooray');
-ini_set('display_startup_errors', TRUE);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +7,23 @@ ini_set('display_startup_errors', TRUE);
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
+<p>
+  Can we strict it?
+  <?php
+  declare(strict_types=1);
+
+  error_reporting(E_ALL);
+  ini_set('display_errors', TRUE);
+  //ini_set('display_errors', 1);
+  //ini_set('display_errors', 'TRUE');
+  //ini_set('display_errors', '1');
+  //ini_set('display_errors', 'hooray');
+  ini_set('display_startup_errors', TRUE);
+  ?>
+</p>
 <div class="container">
-  <h1>DS</h1>
-  <hr>
-  <h3>PHP Version:<?php print phpversion(); ?></h3>
+  <h4 style="margin-bottom: 30px;">PHP Version: <?php print phpversion(); ?></h4>
+  <h4>Delcare/Cast Variables</h4>
   <table class="table table-striped table-hover table-sm">
     <thead>
     <tr>
@@ -46,7 +46,6 @@ ini_set('display_startup_errors', TRUE);
       <td><?php print intval(FOO_CONST); ?></td>
       <td><?php print strval(FOO_CONST); ?></td>
     </tr>
-
     <tr scope="row">
       <td>
         <?php
@@ -59,14 +58,6 @@ ini_set('display_startup_errors', TRUE);
       <td><?php print intval(FOO_DEFINE); ?></td>
       <td><?php print strval(FOO_DEFINE); ?></td>
     </tr>
-    <?php
-    //FOO = 'bar';
-    //$FOO_CONST = 'bar';
-    //FOO_CONST = FOO_DEFINE;
-    //FOO_DEFINE = 'bar';
-
-    print FOO . "\n";
-    ?>
     <tr scope="row">
       <td>
         <?php
@@ -115,30 +106,42 @@ ini_set('display_startup_errors', TRUE);
       </td>
       <td><?php var_dump($foo_int_string); ?></td>
       <td><?php print gettype($foo_int_string); ?></td>
+      <td><?php print (int) $foo_int_string; ?></td>
       <td><?php
-        print (int) $foo_int_string;
+        // print (string) $foo_int_string;
+        // print 'String conversion causes fatal error?';
         // @todo go over the different error types here.
         ?></td>
-      <td><?php print (string) $foo_int_string; ?></td>
     </tr>
     <tr scope="row">
       <td>
         <?php
         $foo_int_string->two = 2;
         print '$foo_int_string->two = 2';
-        //$foo_int_string = (object) '2';
-        //$foo_int_string = (object) array(1, 2, 3);
         ?>
       </td>
       <td><?php var_dump($foo_int_string); ?></td>
       <td><?php print gettype($foo_int_string); ?></td>
+      <td><?php print (int) $foo_int_string; ?></td>
       <td><?php
-        print (int) $foo_int_string;
-        // @todo go over the different error types here.
+        // print (string) $foo_int_string;
+        print 'String conversion causes fatal error?';
         ?></td>
-      <td><?php print (string) $foo_int_string; ?></td>
     </tr>
   </table>
+  <p>
+  <hr>
+  <h4>PHP Assumes Too Much</h4>
+  <?php
+  //  FOO = 'bar';
+  //  $FOO_CONST = 'bar';
+  //  FOO_CONST = FOO_DEFINE;
+  //  FOO_DEFINE = 'bar';
+
+  print 'Why am I allowed to print "' . FOO . '" here"?';
+  ?>
+  <hr>
+  </p>
 </div>
 </body>
 </html>

@@ -1,7 +1,6 @@
 FROM php:5.6
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN echo "America/Denver" > /etc/timezone; dpkg-reconfigure tzdata
 
 RUN apt-get update -y
 RUN apt-get install --no-install-recommends -y libpng-dev zlib1g-dev git ca-certificates
