@@ -1,2 +1,9 @@
 # IntelliJ files
 *.idea
+
+app/build
+app/vendor
+app/composer.lock
+
+app/ds-benchmarks/reports
+app/ds-benchmarks/results.json
