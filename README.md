@@ -1,6 +1,6 @@
 # Data Structures In PHP
 
-Presentation Slides: ....
+Presentation Slides: https://slides.com/afinnarn/deck
 
 ## Local Example
 
