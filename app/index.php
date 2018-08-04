@@ -132,7 +132,10 @@ class DirectoryListing {
 	public $ignoredFileExtensions = array(
 		//'php',
 		//'ini',
-    'md'
+    'md',
+    'json',
+    'lock',
+    'xml',
 	);
 
 	// File names to block from showing in the directory listing

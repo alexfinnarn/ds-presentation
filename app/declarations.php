@@ -1,3 +1,18 @@
+<?php
+declare(strict_types=1);
+print "<p style='margin-bottom: 20px;'>Cane we strict it?\n <strong>declare(strict_types=1);</strong></p>";
+
+error_reporting(E_ALL);
+
+// ini_set() doesn't work in PHP 7.
+
+//ini_set('display_errors', TRUE);
+//ini_set('display_errors', 1);
+//ini_set('display_errors', 'TRUE');
+//ini_set('display_errors', '1');
+//ini_set('display_errors', 'hooray');
+//ini_set('display_startup_errors', TRUE);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,22 +22,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
-<p>
-  Can we strict it?
-  <?php
-  declare(strict_types=1);
-
-  error_reporting(E_ALL);
-  ini_set('display_errors', TRUE);
-  //ini_set('display_errors', 1);
-  //ini_set('display_errors', 'TRUE');
-  //ini_set('display_errors', '1');
-  //ini_set('display_errors', 'hooray');
-  ini_set('display_startup_errors', TRUE);
-  ?>
-</p>
 <div class="container">
-  <h4 style="margin-bottom: 30px;">PHP Version: <?php print phpversion(); ?></h4>
+  <h4 style="margin-bottom: 30px;">PHP Version: <?php print PHP_VERSION; ?></h4>
   <h4>Delcare/Cast Variables</h4>
   <table class="table table-striped table-hover table-sm">
     <thead>
